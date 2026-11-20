@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --gold-canvas: #D69B0D;
+    --gold-card: #E8AA14;
+    --gold-card-hover: #F2B41B;
+    --black-hero: #050505;
+    --dark-banner: #17181A;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: #050505;
+    color: #ffffff;
+  }
+}
+
+.font-condensed {
+  font-family: 'Barlow Condensed', sans-serif;
+}
+
+.font-script {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+.font-mono-tech {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Signature Golden Card from Reference Image 1 */
+.ciclon-gold-card {
+  background: linear-gradient(155deg, #EEAF18 0%, #E1A10E 100%);
+  border-radius: 22px;
+  box-shadow:
+    0 20px 42px -8px rgba(0, 0, 0, 0.32),
+    0 6px 16px -4px rgba(0, 0, 0, 0.18),
+    inset 0 1px 0 rgba(255, 232, 155, 0.35);
+  transition: transform 0.38s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.38s cubic-bezier(0.22, 1, 0.36, 1),
+              background 0.35s ease;
+}
+
+.ciclon-gold-card:hover {
+  transform: translateY(-7px);
+  background: linear-gradient(155deg, #F5B720 0%, #E7A712 100%);
+  box-shadow:
+    0 28px 54px -10px rgba(0, 0, 0, 0.42),
+    0 10px 22px -6px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 240, 180, 0.55);
+}
+
+/* Black slanted "New" badge on top-right corner of cards in Reference Image 1 */
+.new-ribbon-badge {
+  background-color: #090909;
+  color: #ffffff;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-style: italic;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  clip-path: polygon(14% 0%, 100% 0%, 86% 100%, 0% 100%);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.28);
+}
+
+/* Floating product drop shadow inside golden card */
+.product-cutout-shadow {
+  filter: drop-shadow(0 16px 20px rgba(0, 0, 0, 0.32));
+  transition: transform 0.42s cubic-bezier(0.22, 1, 0.36, 1),
+              filter 0.42s ease;
+}
+
+.ciclon-gold-card:hover .product-cutout-shadow {
+  transform: scale(1.055) translateY(-4px);
+  filter: drop-shadow(0 22px 26px rgba(0, 0, 0, 0.4));
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+::-webkit-scrollbar-thumb {
+  background: #D69B0D;
+  border-radius: 4px;
+}
